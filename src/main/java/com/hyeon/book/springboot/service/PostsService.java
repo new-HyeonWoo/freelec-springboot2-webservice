@@ -1,4 +1,4 @@
-package com.hyeon.book.springboot.service.posts;
+package com.hyeon.book.springboot.service;
 
 import com.hyeon.book.springboot.domain.posts.PostsRepository;
 import com.hyeon.book.springboot.web.dto.PostsSaveRequestDto;
@@ -14,6 +14,7 @@ public class PostsService {
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
-        return postsRepository.save(requestDto.toEmpty()).getId();
+
+        return postsRepository.save(requestDto.toEntity()).getId();
     }
 }
