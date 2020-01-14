@@ -1,5 +1,6 @@
 package com.hyeon.book.springboot.domain.posts;
 
+import com.hyeon.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import javax.persistence.*;
 // - 기본값으로 클래스의 카멜케이스 일므을 언더스코어 네이밍으로 이름을 매칭한다.
 // - ex) SalesManager.java -> sales_manager table
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
 
     // 해당 테이블의 PK 필드를 나타냄
