@@ -28,8 +28,13 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
-    // OAuth2User 에서 반환하는 사용자 정보는 Map 이기 때문에 값 하나하나를 변환해야한다.
     public static OAuthAttributes of(String registrationId, String userNameAttributeName,
+                                     Map<String, Object> attributes) {
+        return ofGoogle(userNameAttributeName, attributes);
+    }
+
+    // OAuth2User 에서 반환하는 사용자 정보는 Map 이기 때문에 값 하나하나를 변환해야한다.
+    public static OAuthAttributes ofGoogle(String userNameAttributeName,
                                      Map<String, Object> attributes) {
 
         return OAuthAttributes.builder()
