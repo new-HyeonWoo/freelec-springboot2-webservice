@@ -2,7 +2,6 @@ package com.hyeon.book.springboot.web;
 
 import com.hyeon.book.springboot.config.auth.LoginUser;
 import com.hyeon.book.springboot.config.auth.dto.SessionUser;
-import com.hyeon.book.springboot.domain.user.User;
 import com.hyeon.book.springboot.service.PostsService;
 import com.hyeon.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;

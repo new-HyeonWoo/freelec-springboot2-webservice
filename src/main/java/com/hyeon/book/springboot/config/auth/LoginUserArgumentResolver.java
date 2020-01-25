@@ -20,6 +20,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
     // supportsParameter()
     // 컨트롤러 메서드의 특정 파라미터를 지원하는지 판단한다.
     // 여기서는 파라미터에 @LoginUser 어노테이션이 붙어 있고, 파라미터 클래스 타입이 SessionUser class인 경우 true를 반환한다.
+    // supportsParameter() 메서드에서 true를 반환하면 resolveArgument() 메서드가 수행된다.
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         boolean isLoginUserAnnotation = parameter.getParameterAnnotation(LoginUser.class) != null;
@@ -31,6 +32,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
     // resolveArgument()
     // 파라미터에 전달할 객체를 생성한다.
     // 여기서는 세션에서 객체를 가져온다.
+    //  - 파라미터의 인자값에 대한 정보를 실제 객체를 생성하여 해당 파라미터로 객체에 바인딩 한다.
     @Override
     public Object resolveArgument(MethodParameter parameter,
                                   ModelAndViewContainer mavContainer,
@@ -42,4 +44,5 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
     // After
     // @LoginUser 를 사용하기 위한 환경은 구성되었다.
     // LoginUserArgumentResolver 가 스프링에서 인식하도록 WebMvcConfigurer 에 추가한다.
+    //  - 위에서 등록한 Resolver를 스프링 webmvc resolver에 등록해야 해당 resolver가 작동된다.
 }
