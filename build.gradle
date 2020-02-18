@@ -54,4 +54,7 @@ dependencies {
 
     // test security
     testCompile('org.springframework.security:spring-security-test')
+
+    // MariaDB driver
+    compile("org.mariadb.jdbc:mariadb-java-client")
 }
