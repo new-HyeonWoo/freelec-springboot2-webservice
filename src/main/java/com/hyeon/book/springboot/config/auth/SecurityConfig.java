@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // URL, HTTP 메소드별로 관리가 가능하다.
                 // "/"등 지정된 URL들은 permitAll() 옵션을 통해 전체 열람 권한을 줌.
                 // POST 메소드이면서 "/api/v1/**" 주소를 가진 API는 USER 권한을 가진 사람만 가능하도록 설정
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
+                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/test/**").permitAll()
 //                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
 //                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/img/**", "/scss/**", "/vendor/**").permitAll()
 //                .antMatchers("/api/v1/**").hasRole(Role.GUEST.name())
