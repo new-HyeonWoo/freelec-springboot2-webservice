@@ -39,4 +39,9 @@ public class PostsApiController {
         postsService.delete(id);
         return id;
     }
+
+    @PostMapping("/test/posts")
+    public Long save2(@RequestBody PostsSaveRequestDto requestDto) {
+        return postsService.save(requestDto);
+    }
 }
